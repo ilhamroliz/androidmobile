@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item android:title="Keuangan">
+            <menu>
+                <item
+                    android:id="@+id/menudashboard"
+                    android:icon="@drawable/ic_dashboard"
+                    android:title="Dashboard" />
+            </menu>
+        </item>
+        <item android:title="Aktivitas Produksi">
+            <menu>
+                <item
+                    android:id="@+id/menupenerimaanbarang"
+                    android:icon="@drawable/ic_penerimaanbarang"
+                    android:title="Penerimaan Barang" />
+                <item
+                    android:id="@+id/menupembayaran"
+                    android:icon="@drawable/ic_pembayaran"
+                    android:title="Pembayaran" />
+                <item
+                    android:id="@+id/menureturnproduksi"
+                    android:icon="@drawable/ic_penerimaanbarang"
+                    android:title="Return Produksi" />
+            </menu>
+        </item>
+        <item android:title="Aktivitas Inventory">
+            <menu>
+                <item
+                    android:id="@+id/menupengelolaanbarangmasuk"
+                    android:icon="@drawable/ic_barangmasuk"
+                    android:title="Pengelolaan Barang Masuk" />
+                <item
+                    android:id="@+id/menupengelolaanbarangkeluar"
+                    android:icon="@drawable/ic_barangkeluar"
+                    android:title="Pengelolaan Barang Keluar" />
+                <item
+                    android:id="@+id/menupengelolaandistribusibarang"
+                    android:icon="@drawable/ic_distribusi"
+                    android:title="Pengelolaan Distribusi Barang" />
+                <item
+                    android:id="@+id/menupengelolaanmanajemenstock"
+                    android:icon="@drawable/ic_manajemenstock"
+                    android:title="Pengelolaan Manajemen Stock" />
+            </menu>
+        </item>
+        <item android:title="Aktivitas Marketing">
+            <menu>
+                <item
+                    android:id="@+id/menumanajemenmarketing"
+                    android:icon="@drawable/ic_manajemenmarketing"
+                    android:title="Manajemen Marketing" />
+                <item
+                    android:id="@+id/menumanajemenpenjualanpusat"
+                    android:icon="@drawable/ic_manajemenpenjualan"
+                    android:title="Manajemen Penjualan Pusat" />
+                <item
+                    android:id="@+id/menumanajemenkonsinyasipusat"
+                    android:icon="@drawable/ic_manajemenkonsinyasi"
+                    android:title="Manajemen Konsinyasi Pusat" />
+                <item
+                    android:id="@+id/menumanajemenmarketingarea"
+                    android:icon="@drawable/ic_manajemenma"
+                    android:title="Manajemen Marketing Area" />
+                <item
+                    android:id="@+id/menumanajemenagen"
+                    android:icon="@drawable/ic_manajemenagen"
+                    android:title="Manajemen Agen" />
+            </menu>
+        </item>
+        <item android:title="Aktivitas SDM">
+            <menu>
+                <item
+                    android:id="@+id/menukinerjasdm"
+                    android:icon="@drawable/ic_kelolasdm"
+                    android:title="Kelola Kinerja SDM" />
+                <item
+                    android:id="@+id/menukelolaabsensisdm"
+                    android:icon="@drawable/ic_absensi"
+                    android:title="Kelola Absensi SDM" />
+            </menu>
+        </item>
+        <item android:title="Akun">
+            <menu>
+                <item
+                    android:id="@+id/logout"
+                    android:icon="@drawable/ic_logout"
+                    android:title="Logout" />
+            </menu>
+        </item>
+    </group>
+</menu>
