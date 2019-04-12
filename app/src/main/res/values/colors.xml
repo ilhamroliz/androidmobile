@@ -9,6 +9,11 @@
     <color name="customprimary_darker">#1E2136</color>
     <color name="customaccent">#FFFFFF</color>
 
+    <color name="primary">#ffffff</color>
+    <color name="primary_dark">#A0A0A0</color>
+    <color name="primary_darker">#585858</color>
+    <color name="accent">#5078f2</color>
+
     <color name="redprimary">#E43F3F</color>
     <color name="redprimary_dark">#E12929</color>
     <color name="redprimary_darker">#CC1D1D</color>
@@ -18,6 +23,11 @@
     <color name="yellowprimary_dark">#FCB536</color>
     <color name="yellowprimary_darker">#FFA400</color>
     <color name="yellowaccent">#FFFFFF</color>
+
+    <color name="pinkprimary">#c2185b</color>
+    <color name="pinkprimary_dark">#72042F</color>
+    <color name="pinkprimary_darker">#47011D</color>
+    <color name="pinkaccent">#FFFFFF</color>
 
     <color name="black">#000000</color>
     <color name="jet">#222222</color>
