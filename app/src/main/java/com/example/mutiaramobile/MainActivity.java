@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         store = new StoreSession(MainActivity.this.getApplicationContext());
 
-        Toast.makeText(getApplicationContext(), store.getDataString("username"), Toast.LENGTH_LONG).show();
         if (store.getDataString("username") == null){
             Intent intent = new Intent(this, LoginPage.class);
             startActivity(intent);
