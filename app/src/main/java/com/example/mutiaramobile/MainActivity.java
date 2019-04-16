@@ -1,5 +1,8 @@
 package com.example.mutiaramobile;
 
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
@@ -8,6 +11,7 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatDialogFragment;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -112,10 +116,35 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.menukelolaabsensisdm) {
 
         } else if (id == R.id.logout) {
-            store.RemoveSession();
-            Toast.makeText(getApplicationContext(), "Sukses", Toast.LENGTH_LONG).show();
-            Intent intent = new Intent(this, LoginPage.class);
-            startActivity(intent);
+            AlertDialog.Builder alert = new AlertDialog.Builder(MainActivity.this);
+            alert.setTitle("Logout")
+                    .setMessage("Apakah anda yakin ingin keluar dari aplikasi?")
+                    .setCancelable(false)
+                    .setNegativeButton("Batal", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.cancel();
+                            Toast.makeText(getApplicationContext(), "Batal Logout", Toast.LENGTH_LONG).show();
+                        }
+                    })
+                    .setPositiveButton("Lanjutkan", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            finish();
+                            ProgressDialog progressDialog = new ProgressDialog(MainActivity.this);
+                            progressDialog.setTitle("Logout");
+                            progressDialog.setMessage("Menghapus data...");
+                            progressDialog.setProgressStyle(progressDialog.STYLE_SPINNER);
+                            progressDialog.show();
+                            store.RemoveSession();
+                            progressDialog.dismiss();
+                            Toast.makeText(getApplicationContext(), "Sukses", Toast.LENGTH_LONG).show();
+                            Intent intent = new Intent(MainActivity.this, LoginPage.class);
+                            startActivity(intent);
+                        }
+                    });
+            AlertDialog muncul = alert.create();
+            muncul.show();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

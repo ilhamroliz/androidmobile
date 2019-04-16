@@ -1,5 +1,6 @@
 package com.example.mutiaramobile;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -34,9 +35,15 @@ public class LoginPage extends AppCompatActivity {
 
         store = new StoreSession(LoginPage.this.getApplicationContext());
 
+        final ProgressDialog progressDialog = new ProgressDialog(this);
+        progressDialog.setTitle("Login");
+        progressDialog.setMessage("Menunggu respon dari server...");
+        progressDialog.setProgressStyle(progressDialog.STYLE_SPINNER);
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                progressDialog.show();
                 MutiaraServiceProvider service = new MutiaraServiceProvider();
                 String name = username.getText().toString();
                 String pass = password.getText().toString();
@@ -48,11 +55,13 @@ public class LoginPage extends AppCompatActivity {
 
                 if (name == null || name == ""){
                     valid = 0;
+                    progressDialog.dismiss();
                     Toast.makeText(getApplicationContext(), "Username tidak boleh kosong!!", Toast.LENGTH_LONG).show();
                 }
 
                 if (pass == null || pass == ""){
                     valid = 0;
+                    progressDialog.dismiss();
                     Toast.makeText(getApplicationContext(), "Password tidak boleh kosong!!", Toast.LENGTH_LONG).show();
                 }
 
@@ -73,16 +82,19 @@ public class LoginPage extends AppCompatActivity {
                                     store.setDataString("tipe", response.body().getTipe());
                                     store.setDataString("username", response.body().getUsername());
                                     store.setDataString("refresh_token", response.body().getRefreshToken());
+                                    progressDialog.dismiss();
                                     Toast.makeText(getApplicationContext(), "Berhasil Login", Toast.LENGTH_SHORT).show();
                                     Sukses();
                                 }
                             } catch (Exception e){
+                                progressDialog.dismiss();
                                 Toast.makeText(getApplicationContext(), "Username / Password salah", Toast.LENGTH_SHORT).show();
                             }
                         }
                         @Override
                         public void onFailure(Call<TokenModel> call, Throwable t) {
-                            Toast.makeText(getApplicationContext(), "Gagal", Toast.LENGTH_SHORT).show();
+                            progressDialog.dismiss();
+                            Toast.makeText(getApplicationContext(), "Coba beberapa saat lagi", Toast.LENGTH_SHORT).show();
                         }
                     });
                 }
