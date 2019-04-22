@@ -11,10 +11,11 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.app.AppCompatDialogFragment;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.mutiaramobile.menupage.DashboardPage;
@@ -29,11 +30,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
 
         store = new StoreSession(MainActivity.this.getApplicationContext());
-
-        if (store.getDataString("username") == null){
-            Intent intent = new Intent(this, LoginPage.class);
-            startActivity(intent);
-        }
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -53,6 +49,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        View menu = navigationView.getHeaderView(0);
+        TextView namauser = (TextView) menu.findViewById(R.id.namauser);
+        TextView notlp = (TextView) menu.findViewById(R.id.notlp);
+        TextView area = (TextView) menu.findViewById(R.id.area);
+        if (store.getDataString("username") == null){
+            Intent intent = new Intent(this, LoginPage.class);
+            startActivity(intent);
+        } else {
+            namauser.setText(store.getDataString("nama"));
+            area.setText(store.getDataString("area"));
+            notlp.setText(" (" + store.getDataString("tlp") + ")");
+        }
     }
 
     @Override

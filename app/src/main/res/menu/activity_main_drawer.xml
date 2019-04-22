@@ -24,7 +24,7 @@
                     android:title="Pembayaran" />
                 <item
                     android:id="@+id/menureturnproduksi"
-                    android:icon="@drawable/ic_penerimaanbarang"
+                    android:icon="@drawable/ic_return"
                     android:title="Return Produksi" />
             </menu>
         </item>

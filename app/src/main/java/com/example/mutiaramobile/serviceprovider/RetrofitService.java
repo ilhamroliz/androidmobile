@@ -16,4 +16,15 @@ public class RetrofitService {
         }
         return retrofit;
     }
+
+    public static Retrofit getData(){
+        if (retrofit == null){
+            MutiaraServiceProvider provider = new MutiaraServiceProvider();
+            retrofit = new Retrofit.Builder()
+                    .baseUrl(provider.getGlobalUrl())
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+        }
+        return retrofit;
+    }
 }
