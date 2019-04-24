@@ -1,4 +1,4 @@
-package com.example.mutiaramobile.model;
+package com.example.mutiaramobile.model.PenerimaanBarang;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

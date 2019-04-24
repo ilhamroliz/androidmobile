@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mutiaramobile">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_mutiaralauncher"
@@ -9,19 +11,28 @@
         android:roundIcon="@mipmap/ic_mutiaralauncher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <activity
+            android:label="Terima Barang"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:name=".menupage.submenupage.TerimaBarang">
+        </activity>
+
         <activity
             android:name=".LoginPage"
-            android:theme="@style/AppTheme.Fix">
-        </activity>
+            android:theme="@style/AppTheme.Fix" />
+
         <activity
-            android:label="Mutiara Mobile"
             android:name=".MainActivity"
+            android:label="Mutiara Mobile"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>

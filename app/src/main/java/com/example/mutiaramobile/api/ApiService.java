@@ -1,6 +1,7 @@
 package com.example.mutiaramobile.api;
 
 import com.example.mutiaramobile.model.ItemModel;
+import com.example.mutiaramobile.model.ItemTerimaBarangModel;
 import com.example.mutiaramobile.model.TokenModel;
 
 import retrofit2.Call;
@@ -22,4 +23,9 @@ public interface ApiService {
 
     @POST("api/penerimaan-barang/get-data-penerimaan")
     Call<ItemModel> getDataPenerimaan(@Header("Authorization") String Authorization);
+
+    @POST("api/penerimaan-barang/get-data-penerimaan/nota")
+    @FormUrlEncoded
+    Call<ItemTerimaBarangModel> getDataPenerimaanNota(@Header("Authorization") String Authorization,
+                                          @Field("nota") String nota);
 }

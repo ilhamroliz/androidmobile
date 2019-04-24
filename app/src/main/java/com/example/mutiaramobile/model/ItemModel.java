@@ -1,5 +1,7 @@
 package com.example.mutiaramobile.model;
 
+import com.example.mutiaramobile.model.PenerimaanBarang.PenerimaanBarangModel;
+import com.example.mutiaramobile.model.PenerimaanBarang.TerimaBarangNotaModel;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -9,13 +11,14 @@ public class ItemModel {
 
     @SerializedName("item")
     @Expose
-    private List<PenerimaanBarangModel> item = null;
+    private List<PenerimaanBarangModel> itemPenerimaan = null;
 
-    public List<PenerimaanBarangModel> getItem() {
-        return item;
+    public List<PenerimaanBarangModel> getItemPenerimaan() {
+        return itemPenerimaan;
     }
 
-    public void setItem(List<PenerimaanBarangModel> item) {
-        this.item = item;
+    public void setItemPenerimaan(List<PenerimaanBarangModel> item) {
+        this.itemPenerimaan = item;
     }
+
 }
