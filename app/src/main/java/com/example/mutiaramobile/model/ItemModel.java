@@ -21,4 +21,16 @@ public class ItemModel {
         this.itemPenerimaan = item;
     }
 
+    @SerializedName("BarangPenerimaan")
+    @Expose
+    private List<TerimaBarangNotaModel> itemTerimaBarang = null;
+
+    public List<TerimaBarangNotaModel> getItemTerimaBarang() {
+        return itemTerimaBarang;
+    }
+
+    public void setItemTerimaBarang(List<TerimaBarangNotaModel> item) {
+        this.itemTerimaBarang = item;
+    }
+
 }

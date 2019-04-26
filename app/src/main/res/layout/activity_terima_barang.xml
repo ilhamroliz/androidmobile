@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".menupage.submenupage.TerimaBarang">
+    tools:context=".menupage.penerimaanbarang.TerimaBarangPage">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -20,30 +20,35 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <RelativeLayout
-        android:layout_marginTop="?attr/actionBarSize"
-        android:id="@+id/LayoutListPenerimaanBarang"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content">
 
-        <TextView
-            android:textStyle="bold"
-            android:textSize="20dp"
-            android:id="@+id/listOrderBarang"
+        <RelativeLayout
+            android:id="@+id/LayoutListPenerimaanBarang"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="List Order Barang" />
+            android:layout_marginTop="?attr/actionBarSize"
+            android:orientation="horizontal"
+            android:padding="16dp">
 
-        <ListView
-            android:id="@+id/ListBarangNota"
-            android:layout_width="match_parent"
-            android:layout_below="@+id/listOrderBarang"
-            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/listOrderBarang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="List Order Barang"
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
-        </ListView>
+            <ListView
+                android:id="@+id/ListBarangNota"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/listOrderBarang">
 
-    </RelativeLayout>
+            </ListView>
 
+        </RelativeLayout>
+
+    </ScrollView>
 </android.support.design.widget.CoordinatorLayout>

@@ -18,6 +18,9 @@ public class TerimaBarangNotaModel {
     @SerializedName("pod_qty")
     @Expose
     private int podQty;
+    @SerializedName("i_id")
+    @Expose
+    private int i_id;
 
     public String getPoNota() {
         return poNota;
@@ -49,6 +52,14 @@ public class TerimaBarangNotaModel {
 
     public void setPodQty(int podQty) {
         this.podQty = podQty;
+    }
+
+    public int getI_id() {
+        return i_id;
+    }
+
+    public void setI_id(int i_id) {
+        this.i_id = i_id;
     }
 
 }

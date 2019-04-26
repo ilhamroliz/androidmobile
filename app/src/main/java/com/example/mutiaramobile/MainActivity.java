@@ -19,7 +19,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.mutiaramobile.menupage.DashboardPage;
-import com.example.mutiaramobile.menupage.PenerimaanBarangPage;
+import com.example.mutiaramobile.menupage.penerimaanbarang.PenerimaanBarangPage;
 import com.example.mutiaramobile.serviceprovider.StoreSession;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -36,10 +36,23 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        DashboardPage fragment = new DashboardPage();
-        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.frameLayout, fragment);
-        fragmentTransaction.commit();
+        try {
+            String page = getIntent().getStringExtra("fragment");
+            System.out.println(page);
+            if (page != null){
+                movePage(page);
+            } else {
+                DashboardPage fragment = new DashboardPage();
+                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.frameLayout, fragment);
+                fragmentTransaction.commit();
+            }
+        } catch (Exception e){
+            DashboardPage fragment = new DashboardPage();
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.frameLayout, fragment);
+            fragmentTransaction.commit();
+        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -159,5 +172,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public void movePage(String page){
+        if (page == "Penerimaan Barang"){
+            PenerimaanBarangPage fragment = new PenerimaanBarangPage();
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.frameLayout, fragment);
+            fragmentTransaction.commit();
+        }
     }
 }

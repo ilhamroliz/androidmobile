@@ -11,17 +11,20 @@
         android:roundIcon="@mipmap/ic_mutiaralauncher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <activity android:name=".menupage.penerimaanbarang.InputPenerimaanBarangPage"
+            android:label="Input Penerimaan Barang"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
+            android:name=".menupage.penerimaanbarang.TerimaBarangPage"
             android:label="Terima Barang"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:name=".menupage.submenupage.TerimaBarang">
+            android:theme="@style/AppTheme.NoActionBar">
+            <!--<meta-data-->
+                <!--android:name="android.support.PARENT_ACTIVITY"-->
+                <!--android:value=".MainActivity" />-->
         </activity>
-
         <activity
             android:name=".LoginPage"
             android:theme="@style/AppTheme.Fix" />
-
         <activity
             android:name=".MainActivity"
             android:label="Mutiara Mobile"
@@ -32,7 +35,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>

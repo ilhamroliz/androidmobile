@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".menupage.penerimaanbarang.InputPenerimaanBarangPage">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/accent"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/layout_terima_barang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="?attr/actionBarSize"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/input_penerimaan_imageview"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/ic_imagebroken" />
+
+            <TextView
+                android:id="@+id/input_terima_barang_label_nama_barang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/input_penerimaan_imageview"
+                android:layout_marginTop="20dp"
+                android:autoSizeTextType="uniform"
+                android:text="Nama Barang : "
+                android:textSize="17dp" />
+
+            <TextView
+                android:id="@+id/input_terima_barang_nama_barang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/input_penerimaan_imageview"
+                android:layout_marginTop="20dp"
+                android:layout_toRightOf="@+id/input_terima_barang_label_nama_barang"
+                android:autoSizeTextType="uniform"
+                android:text="Agarillus"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:textSize="17dp" />
+
+            <TextView
+                android:id="@+id/input_terima_barang_label_jumlah_order"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/input_terima_barang_label_nama_barang"
+                android:autoSizeTextType="uniform"
+                android:paddingTop="?attr/listPreferredItemPaddingRight"
+                android:text="Jumlah Order : "
+                android:textSize="17dp" />
+
+            <TextView
+                android:id="@+id/input_terima_barang_jumlah_order"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/input_terima_barang_nama_barang"
+                android:layout_toRightOf="@+id/input_terima_barang_label_jumlah_order"
+                android:autoSizeTextType="uniform"
+                android:paddingTop="?attr/listPreferredItemPaddingRight"
+                android:text="30 Dus"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:textSize="17dp" />
+
+            <TextView
+                android:id="@+id/input_terima_barang_label_sisa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/input_terima_barang_label_jumlah_order"
+                android:autoSizeTextType="uniform"
+                android:paddingTop="?attr/listPreferredItemPaddingRight"
+                android:text="Sisa : "
+                android:textSize="17dp" />
+
+            <TextView
+                android:id="@+id/input_terima_barang_sisa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/input_terima_barang_jumlah_order"
+                android:layout_toRightOf="@+id/input_terima_barang_label_sisa"
+                android:autoSizeTextType="uniform"
+                android:paddingTop="?attr/listPreferredItemPaddingRight"
+                android:text="10 Dus"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:textSize="17dp" />
+
+            <TextView
+                android:id="@+id/input_terima_barang_label_terima"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/input_terima_barang_label_sisa"
+                android:autoSizeTextType="uniform"
+                android:paddingTop="?attr/listPreferredItemPaddingRight"
+                android:text="Terima : "
+                android:textSize="17dp" />
+
+            <EditText
+                android:id="@+id/input_terima_barang_form_terima"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/input_terima_barang_sisa"
+                android:layout_toRightOf="@id/input_terima_barang_label_terima"
+                android:inputType="number"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:textSize="17dp" />
+
+            <TextView
+                android:id="@+id/input_terima_barang_label_satuan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/input_terima_barang_label_sisa"
+                android:layout_toRightOf="@+id/input_terima_barang_form_terima"
+                android:autoSizeTextType="uniform"
+                android:paddingTop="?attr/listPreferredItemPaddingRight"
+                android:text=" Dus"
+                android:textSize="17dp" />
+
+            <Button
+                android:id="@+id/btn_terima_barang_submit"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/input_terima_barang_label_terima"
+                android:layout_marginTop="30dp"
+                android:background="@color/accent"
+                android:padding="12dp"
+                android:text="Simpan"
+                android:textColor="@color/primary" />
+        </RelativeLayout>
+    </ScrollView>
+
+</android.support.design.widget.CoordinatorLayout>

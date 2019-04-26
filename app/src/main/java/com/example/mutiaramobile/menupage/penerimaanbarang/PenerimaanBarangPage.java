@@ -1,4 +1,4 @@
-package com.example.mutiaramobile.menupage;
+package com.example.mutiaramobile.menupage.penerimaanbarang;
 
 
 import android.app.ProgressDialog;
@@ -9,14 +9,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
 import com.example.mutiaramobile.R;
 import com.example.mutiaramobile.api.ApiService;
-import com.example.mutiaramobile.menupage.submenupage.TerimaBarang;
 import com.example.mutiaramobile.model.ItemModel;
 import com.example.mutiaramobile.model.PenerimaanBarang.PenerimaanBarangModel;
 import com.example.mutiaramobile.serviceprovider.MutiaraServiceProvider;
@@ -95,7 +93,7 @@ public class PenerimaanBarangPage extends Fragment {
                     listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                            Intent intent = new Intent(getActivity(), TerimaBarang.class);
+                            Intent intent = new Intent(getActivity(), TerimaBarangPage.class);
                             intent.putExtra("Nota", nota.get(position));
                             startActivity(intent);
                         }
