@@ -123,6 +123,7 @@
                 android:layout_below="@id/input_terima_barang_sisa"
                 android:layout_toRightOf="@id/input_terima_barang_label_terima"
                 android:inputType="number"
+                android:textAlignment="center"
                 android:textAppearance="?attr/textAppearanceListItem"
                 android:textSize="17dp" />
 
@@ -137,15 +138,34 @@
                 android:text=" Dus"
                 android:textSize="17dp" />
 
+            <TextView
+                android:id="@+id/input_terima_barang_label_notado"
+                android:layout_below="@+id/input_terima_barang_label_terima"
+                android:text="Nota DO : "
+                android:paddingTop="?attr/listPreferredItemPaddingRight"
+                android:textSize="17dp"
+                android:autoSizeTextType="uniform"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/input_terima_barang_form_notado"
+                android:layout_below="@id/input_terima_barang_label_satuan"
+                android:layout_toRightOf="@id/input_terima_barang_label_notado"
+                android:layout_width="match_parent"
+                android:inputType="textCapCharacters"
+                android:layout_height="wrap_content" />
+
             <Button
                 android:id="@+id/btn_terima_barang_submit"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/input_terima_barang_label_terima"
+                android:layout_below="@+id/input_terima_barang_label_notado"
                 android:layout_marginTop="30dp"
                 android:background="@color/accent"
                 android:padding="12dp"
                 android:text="Simpan"
+                android:onClick="UpdatePenerimaan"
                 android:textColor="@color/primary" />
         </RelativeLayout>
     </ScrollView>

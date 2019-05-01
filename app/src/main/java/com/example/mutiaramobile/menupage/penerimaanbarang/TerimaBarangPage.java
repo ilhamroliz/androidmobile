@@ -100,6 +100,7 @@ public class TerimaBarangPage extends AppCompatActivity {
                         intent.putExtra("Item", idItem.get(position));
                         intent.putExtra("Order", qty.get(position));
                         intent.putExtra("Satuan", satuan.get(position));
+                        intent.putExtra("Nama", nama.get(position));
                         startActivity(intent);
                     }
                 });

@@ -20,35 +20,30 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <ScrollView
+    <RelativeLayout
+        android:id="@+id/LayoutListPenerimaanBarang"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:orientation="horizontal"
+        android:padding="16dp">
 
-        <RelativeLayout
-            android:id="@+id/LayoutListPenerimaanBarang"
+        <TextView
+            android:id="@+id/listOrderBarang"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="?attr/actionBarSize"
-            android:orientation="horizontal"
-            android:padding="16dp">
+            android:text="List Order Barang"
+            android:textSize="20dp"
+            android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/listOrderBarang"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="List Order Barang"
-                android:textSize="20dp"
-                android:textStyle="bold" />
+        <ListView
+            android:id="@+id/ListBarangNota"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/listOrderBarang">
 
-            <ListView
-                android:id="@+id/ListBarangNota"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/listOrderBarang">
+        </ListView>
 
-            </ListView>
+    </RelativeLayout>
 
-        </RelativeLayout>
-
-    </ScrollView>
 </android.support.design.widget.CoordinatorLayout>
