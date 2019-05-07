@@ -1,5 +1,7 @@
 package com.example.mutiaramobile.model;
 
+import com.example.mutiaramobile.model.PembayaranNota.NotaOrderProduksiModel;
+import com.example.mutiaramobile.model.PembayaranNota.TerminNotaProduksiModel;
 import com.example.mutiaramobile.model.PenerimaanBarang.PenerimaanBarangModel;
 import com.example.mutiaramobile.model.PenerimaanBarang.TerimaBarangNotaModel;
 import com.google.gson.annotations.Expose;
@@ -21,6 +23,8 @@ public class ItemModel {
         this.itemPenerimaan = item;
     }
 
+    //============================================================================
+
     @SerializedName("BarangPenerimaan")
     @Expose
     private List<TerimaBarangNotaModel> itemTerimaBarang = null;
@@ -31,6 +35,34 @@ public class ItemModel {
 
     public void setItemTerimaBarang(List<TerimaBarangNotaModel> item) {
         this.itemTerimaBarang = item;
+    }
+
+    //============================================================================
+
+    @SerializedName("NotaOrderProduksi")
+    @Expose
+    private List<NotaOrderProduksiModel> notaOrderProduksi = null;
+
+    public List<NotaOrderProduksiModel> getNotaOrderProduksi() {
+        return notaOrderProduksi;
+    }
+
+    public void setNotaOrderProduksiModel(List<NotaOrderProduksiModel> data) {
+        this.notaOrderProduksi = data;
+    }
+
+    //============================================================================
+
+    @SerializedName("ListTerminNota")
+    @Expose
+    private List<TerminNotaProduksiModel> listTerminNota = null;
+
+    public List<TerminNotaProduksiModel> getListTerminNota() {
+        return listTerminNota;
+    }
+
+    public void setListTerminNota(List<TerminNotaProduksiModel> listTerminNota) {
+        this.listTerminNota = listTerminNota;
     }
 
 }

@@ -44,4 +44,12 @@ public interface ApiService {
                                          @Field("username") String username,
                                          @Field("notado") String notado,
                                          @Field("nota") String nota);
+
+    @POST("api/pembayaran-nota/get-data-supplier")
+    Call<ItemModel> getNotaPembayaran(@Header("Authorization") String Authorization);
+
+    @POST("api/pembayaran-nota/get-data-termin")
+    @FormUrlEncoded
+    Call<ItemModel> getTerminProduksi(@Header("Authorization") String Authorization,
+                                      @Field("nota") String nota);
 }

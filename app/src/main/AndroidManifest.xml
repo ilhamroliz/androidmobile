@@ -11,16 +11,29 @@
         android:roundIcon="@mipmap/ic_mutiaralauncher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".menupage.penerimaanbarang.InputPenerimaanBarangPage"
+        <activity
+            android:label="Pembayaran Termin"
+            android:name=".menupage.pembayaranpage.InputTerminPage"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+        <activity
+            android:name=".menupage.pembayaranpage.ListTerminPembayaranPage"
+            android:label="Pembayaran Termin"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.mutiaramobile.MainActivity" />
+        </activity>
+        <activity
+            android:name=".menupage.penerimaanbarang.InputPenerimaanBarangPage"
             android:label="Input Penerimaan Barang"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".menupage.penerimaanbarang.TerimaBarangPage"
             android:label="Terima Barang"
             android:theme="@style/AppTheme.NoActionBar">
-            <!--<meta-data-->
-                <!--android:name="android.support.PARENT_ACTIVITY"-->
-                <!--android:value=".MainActivity" />-->
         </activity>
         <activity
             android:name=".LoginPage"

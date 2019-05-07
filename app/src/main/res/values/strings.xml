@@ -54,4 +54,6 @@
 
         <item name="colorButtonNormal">@color/pinkprimary</item>
     </style>
+
+    <string name="title_activity_list_termin_pembayaran_page">ListTerminPembayaranPage</string>
 </resources>

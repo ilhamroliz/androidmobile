@@ -13,6 +13,7 @@
     <color name="primary_dark">#A0A0A0</color>
     <color name="primary_darker">#585858</color>
     <color name="accent">#5078f2</color>
+    <color name="accent_dark">#003CF8</color>
 
     <color name="redprimary">#E43F3F</color>
     <color name="redprimary_dark">#E12929</color>

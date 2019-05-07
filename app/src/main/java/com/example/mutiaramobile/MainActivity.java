@@ -19,6 +19,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.mutiaramobile.menupage.DashboardPage;
+import com.example.mutiaramobile.menupage.pembayaranpage.PembayaranPage;
 import com.example.mutiaramobile.menupage.penerimaanbarang.PenerimaanBarangPage;
 import com.example.mutiaramobile.serviceprovider.StoreSession;
 
@@ -112,7 +113,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             fragmentTransaction.commit();
 
         } else if (id == R.id.menupembayaran){
-
+            PembayaranPage fragment = new PembayaranPage();
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.frameLayout, fragment);
+            fragmentTransaction.commit();
         } else if (id == R.id.menureturnproduksi) {
 
         } else if (id == R.id.menupengelolaanbarangmasuk) {

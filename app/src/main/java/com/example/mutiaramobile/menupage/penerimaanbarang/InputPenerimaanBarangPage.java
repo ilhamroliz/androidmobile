@@ -132,6 +132,8 @@ public class InputPenerimaanBarangPage extends AppCompatActivity {
                         public void onResponse(Call<StatusModel> call, Response<StatusModel> response) {
                             progressDialog.dismiss();
                             Toast.makeText(getApplicationContext(), response.body().getStatus(), Toast.LENGTH_SHORT).show();
+                            finish();
+                            startActivity(getIntent());
                         }
 
                         @Override
