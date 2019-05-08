@@ -16,6 +16,12 @@ public class TerminNotaProduksiModel {
     @SerializedName("pop_valueint")
     @Expose
     private String popValueint;
+    @SerializedName("tagihan")
+    @Expose
+    private String tagihan;
+    @SerializedName("tagihanrp")
+    @Expose
+    private String tagihanrp;
 
     public String getPopTermin() {
         return popTermin;
@@ -47,5 +53,21 @@ public class TerminNotaProduksiModel {
 
     public void setPopValueint(String popValueint) {
         this.popValueint = popValueint;
+    }
+
+    public String getTagihan() {
+        return tagihan;
+    }
+
+    public void setTagihan(String tagihan) {
+        this.tagihan = tagihan;
+    }
+
+    public String getTagihanrp() {
+        return tagihanrp;
+    }
+
+    public void setTagihanrp(String tagihanrp) {
+        this.tagihanrp = tagihanrp;
     }
 }

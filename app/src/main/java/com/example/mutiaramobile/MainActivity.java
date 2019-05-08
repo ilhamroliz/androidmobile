@@ -31,7 +31,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
 
         store = new StoreSession(MainActivity.this.getApplicationContext());
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -43,15 +42,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             if (page != null){
                 movePage(page);
             } else {
-                DashboardPage fragment = new DashboardPage();
+                DashboardPage dashboardPage = new DashboardPage();
                 FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.frameLayout, fragment);
+                fragmentTransaction.replace(R.id.frameLayout, dashboardPage);
                 fragmentTransaction.commit();
             }
         } catch (Exception e){
-            DashboardPage fragment = new DashboardPage();
+            DashboardPage dashboardPage = new DashboardPage();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.frameLayout, fragment);
+            fragmentTransaction.replace(R.id.frameLayout, dashboardPage);
             fragmentTransaction.commit();
         }
 
@@ -180,9 +179,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     public void movePage(String page){
         if (page == "Penerimaan Barang"){
-            PenerimaanBarangPage fragment = new PenerimaanBarangPage();
+            PenerimaanBarangPage penerimaanBarangPage = new PenerimaanBarangPage();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.frameLayout, fragment);
+            fragmentTransaction.replace(R.id.frameLayout, penerimaanBarangPage);
+            fragmentTransaction.commit();
+        } else if (page == "Pembayaran") {
+            PembayaranPage pembayaranPage = new PembayaranPage();
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.frameLayout, pembayaranPage);
             fragmentTransaction.commit();
         }
     }

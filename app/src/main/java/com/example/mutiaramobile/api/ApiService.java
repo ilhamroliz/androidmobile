@@ -52,4 +52,11 @@ public interface ApiService {
     @FormUrlEncoded
     Call<ItemModel> getTerminProduksi(@Header("Authorization") String Authorization,
                                       @Field("nota") String nota);
+
+    @POST("api/pembayaran-nota/update-data-termin")
+    @FormUrlEncoded
+    Call<StatusModel> simpanDataTermin(@Header("Authorization") String Authorization,
+                                       @Field("nota") String nota,
+                                       @Field("termin") String termin,
+                                       @Field("bayar") Integer bayar);
 }

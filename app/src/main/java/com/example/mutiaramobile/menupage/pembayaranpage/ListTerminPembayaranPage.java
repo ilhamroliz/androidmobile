@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -12,6 +13,7 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
+import com.example.mutiaramobile.MainActivity;
 import com.example.mutiaramobile.R;
 import com.example.mutiaramobile.api.ApiService;
 import com.example.mutiaramobile.model.ItemModel;
@@ -34,14 +36,15 @@ public class ListTerminPembayaranPage extends AppCompatActivity {
     ProgressDialog progressDialog;
     String nota;
     ListView listView;
-    ArrayList<String> datetop, bayarrp, bayar, termin;
+    ArrayList<String> datetop, bayarrp, bayar, termin, tagihan, tagihanrp;
     ArrayList<Map<String, Object>> dataList;
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_termin_pembayaran_page);
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -60,6 +63,8 @@ public class ListTerminPembayaranPage extends AppCompatActivity {
         bayarrp = new ArrayList<String>();
         bayar = new ArrayList<String>();
         termin = new ArrayList<String>();
+        tagihan = new ArrayList<String>();
+        tagihanrp = new ArrayList<String>();
 
         dataList = new ArrayList<Map<String, Object>>();
 
@@ -77,6 +82,8 @@ public class ListTerminPembayaranPage extends AppCompatActivity {
                         bayarrp.add(info.getPopValue());
                         bayar.add(info.getPopValueint());
                         termin.add(info.getPopTermin());
+                        tagihan.add(info.getTagihan());
+                        tagihanrp.add(info.getTagihanrp());
                     }
 
                     for (int i = 0; i < list_termin.size(); i++) {
@@ -97,6 +104,11 @@ public class ListTerminPembayaranPage extends AppCompatActivity {
                             Intent intent = new Intent(getApplicationContext(), InputTerminPage.class);
                             intent.putExtra("nota", nota);
                             intent.putExtra("termin", termin.get(position));
+                            intent.putExtra("bayar", bayar.get(position));
+                            intent.putExtra("bayarrp", bayarrp.get(position));
+                            intent.putExtra("tagihan", tagihan.get(position));
+                            intent.putExtra("tagihanrp", tagihanrp.get(position));
+                            intent.putExtra("tanggal", datetop.get(position));
                             startActivity(intent);
                         }
                     });
@@ -113,12 +125,17 @@ public class ListTerminPembayaranPage extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "gagal", Toast.LENGTH_SHORT).show();
             }
         });
-    }
 
-    public boolean onOptionsItemSelected(MenuItem item) {
-        Intent myIntent = new Intent(getApplicationContext(), ListTerminPembayaranPage.class);
-        finish();
-        return true;
-    }
+        toolbar.setNavigationOnClickListener(new View.OnClickListener(){
 
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(getApplicationContext(), MainActivity.class);
+                myIntent.putExtra("fragment", "Pembayaran");
+                startActivity(myIntent);
+                finish();
+            }
+        });
+
+    }
 }

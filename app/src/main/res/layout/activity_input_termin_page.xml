@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     tools:context=".menupage.pembayaranpage.InputTerminPage">
 
     <android.support.design.widget.AppBarLayout
@@ -20,17 +20,160 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <RelativeLayout
-        android:layout_marginTop="?attr/actionBarSize"
-        android:padding="16dp"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <TextView
-            android:text="Input Pembayaran"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="?attr/actionBarSize"
+            android:padding="16dp">
 
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/input_pembayaran_label_nota"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:autoSizeTextType="uniform"
+                android:text="Nota                  : "
+                android:textSize="20dp" />
 
+            <TextView
+                android:id="@+id/input_pembayaran_nota"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_toRightOf="@+id/input_pembayaran_label_nota"
+                android:autoSizeTextType="uniform"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/input_pembayaran_label_termin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/input_pembayaran_label_nota"
+                android:layout_marginTop="15dp"
+                android:autoSizeTextType="uniform"
+                android:text="Termin              : "
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/input_pembayaran_termin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/input_pembayaran_nota"
+                android:layout_marginTop="15dp"
+                android:layout_toRightOf="@+id/input_pembayaran_label_termin"
+                android:autoSizeTextType="uniform"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/input_pembayaran_label_tanggal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/input_pembayaran_label_termin"
+                android:layout_marginTop="15dp"
+                android:autoSizeTextType="uniform"
+                android:text="Tanggal            : "
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/input_pembayaran_tanggal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/input_pembayaran_termin"
+                android:layout_marginTop="15dp"
+                android:layout_toRightOf="@+id/input_pembayaran_label_tanggal"
+                android:autoSizeTextType="uniform"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/input_pembayaran_label_tagihan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/input_pembayaran_label_tanggal"
+                android:layout_marginTop="15dp"
+                android:autoSizeTextType="uniform"
+                android:text="Tagihan            : "
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/input_pembayaran_tagihan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/input_pembayaran_tanggal"
+                android:layout_marginTop="15dp"
+                android:layout_toRightOf="@+id/input_pembayaran_label_tagihan"
+                android:autoSizeTextType="uniform"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/input_pembayaran_label_sisatagihan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/input_pembayaran_label_tagihan"
+                android:layout_marginTop="15dp"
+                android:autoSizeTextType="uniform"
+                android:text="Sisa Tagihan   : "
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/input_pembayaran_sisatagihan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/input_pembayaran_tagihan"
+                android:layout_marginTop="15dp"
+                android:layout_toRightOf="@+id/input_pembayaran_label_sisatagihan"
+                android:autoSizeTextType="uniform"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/input_pembayaran_label_bayar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/input_pembayaran_label_sisatagihan"
+                android:layout_marginTop="15dp"
+                android:autoSizeTextType="uniform"
+                android:text="Bayar                : "
+                android:textSize="20dp" />
+
+            <!--<EditText-->
+                <!--android:id="@+id/input_pembayaran_bayar"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_below="@+id/input_pembayaran_sisatagihan"-->
+                <!--android:layout_marginTop="5dp"-->
+                <!--android:layout_toRightOf="@+id/input_pembayaran_label_bayar"-->
+                <!--android:inputType="number"-->
+                <!--android:textAlignment="textEnd"-->
+                <!--android:textSize="20dp" />-->
+
+            <faranjit.currency.edittext.CurrencyEditText
+                android:id="@+id/input_pembayaran_bayar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/input_pembayaran_sisatagihan"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@+id/input_pembayaran_label_bayar"
+                android:inputType="number"
+                app:groupDivider="."
+                app:locale="in_ID"
+                android:textAlignment="textEnd"
+                android:textSize="20dp" />
+
+            <Button
+                android:id="@+id/btn_pembayaran_submit"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/input_pembayaran_bayar"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/btn_primary"
+                android:onClick="UpdatePembayaran"
+                android:padding="12dp"
+                android:text="Simpan"
+                android:textColor="@color/primary" />
+
+        </RelativeLayout>
+    </ScrollView>
 </android.support.design.widget.CoordinatorLayout>
