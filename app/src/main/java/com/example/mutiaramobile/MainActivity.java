@@ -37,10 +37,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setSupportActionBar(toolbar);
 
         try {
-            String page = getIntent().getStringExtra("fragment");
-            System.out.println(page);
+            Bundle page = null;
+            page = getIntent().getExtras();
             if (page != null){
-                movePage(page);
+                int page_id = page.getInt("fragment");
+                movePage(page_id);
             } else {
                 DashboardPage dashboardPage = new DashboardPage();
                 FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
@@ -99,23 +100,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         if (id == R.id.menudashboard) {
             DashboardPage fragment = new DashboardPage();
-            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.frameLayout, fragment);
-            fragmentTransaction.commit();
         } else if (id == R.id.menupenerimaanbarang){
             PenerimaanBarangPage fragment = new PenerimaanBarangPage();
-            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.frameLayout, fragment);
-            fragmentTransaction.commit();
-
         } else if (id == R.id.menupembayaran){
             PembayaranPage fragment = new PembayaranPage();
-            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.frameLayout, fragment);
-            fragmentTransaction.commit();
         } else if (id == R.id.menureturnproduksi) {
 
         } else if (id == R.id.menupengelolaanbarangmasuk) {
@@ -170,24 +164,29 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     });
             AlertDialog muncul = alert.create();
             muncul.show();
+        } else {
+            DashboardPage fragment = new DashboardPage();
+            fragmentTransaction.replace(R.id.frameLayout, fragment);
         }
+        fragmentTransaction.commit();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 
-    public void movePage(String page){
-        if (page == "Penerimaan Barang"){
+    public void movePage(int page){
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        if (page == 1){
             PenerimaanBarangPage penerimaanBarangPage = new PenerimaanBarangPage();
-            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.frameLayout, penerimaanBarangPage);
-            fragmentTransaction.commit();
-        } else if (page == "Pembayaran") {
+        } else if (page == 2) {
             PembayaranPage pembayaranPage = new PembayaranPage();
-            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.frameLayout, pembayaranPage);
-            fragmentTransaction.commit();
+        } else {
+            DashboardPage dashboardPage = new DashboardPage();
+            fragmentTransaction.replace(R.id.frameLayout, dashboardPage);
         }
+        fragmentTransaction.commit();
     }
 }

@@ -117,8 +117,8 @@ public class TerimaBarangPage extends AppCompatActivity {
 
     public boolean onOptionsItemSelected(MenuItem item){
         Intent myIntent = new Intent(getApplicationContext(), MainActivity.class);
-        myIntent.putExtra("fragment", "Penerimaan Barang");
-        setResult(RESULT_OK, myIntent);
+        myIntent.putExtra("fragment", 1);
+        startActivity(myIntent);
         finish();
         return true;
     }
