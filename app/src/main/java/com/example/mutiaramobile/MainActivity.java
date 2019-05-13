@@ -21,6 +21,7 @@ import android.widget.Toast;
 import com.example.mutiaramobile.menupage.DashboardPage;
 import com.example.mutiaramobile.menupage.pembayaranpage.PembayaranPage;
 import com.example.mutiaramobile.menupage.penerimaanbarang.PenerimaanBarangPage;
+import com.example.mutiaramobile.menupage.returnproduksipage.ReturnProduksiPage;
 import com.example.mutiaramobile.serviceprovider.StoreSession;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -45,13 +46,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             } else {
                 DashboardPage dashboardPage = new DashboardPage();
                 FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.frameLayout, dashboardPage);
+                fragmentTransaction.replace(R.id.frameLayout, dashboardPage).addToBackStack(null);
                 fragmentTransaction.commit();
             }
         } catch (Exception e){
             DashboardPage dashboardPage = new DashboardPage();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.frameLayout, dashboardPage);
+            fragmentTransaction.replace(R.id.frameLayout, dashboardPage).addToBackStack(null);
             fragmentTransaction.commit();
         }
 
@@ -102,16 +103,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         if (id == R.id.menudashboard) {
-            DashboardPage fragment = new DashboardPage();
-            fragmentTransaction.replace(R.id.frameLayout, fragment);
+            DashboardPage dashboardPage = new DashboardPage();
+            fragmentTransaction.replace(R.id.frameLayout, dashboardPage).addToBackStack(null);
         } else if (id == R.id.menupenerimaanbarang){
-            PenerimaanBarangPage fragment = new PenerimaanBarangPage();
-            fragmentTransaction.replace(R.id.frameLayout, fragment);
+            PenerimaanBarangPage penerimaanBarangPage = new PenerimaanBarangPage();
+            fragmentTransaction.replace(R.id.frameLayout, penerimaanBarangPage).addToBackStack(null);
         } else if (id == R.id.menupembayaran){
-            PembayaranPage fragment = new PembayaranPage();
-            fragmentTransaction.replace(R.id.frameLayout, fragment);
+            PembayaranPage pembayaranPage = new PembayaranPage();
+            fragmentTransaction.replace(R.id.frameLayout, pembayaranPage).addToBackStack(null);
         } else if (id == R.id.menureturnproduksi) {
-
+            ReturnProduksiPage returnProduksiPage = new ReturnProduksiPage();
+            fragmentTransaction.replace(R.id.frameLayout, returnProduksiPage).addToBackStack(null);
         } else if (id == R.id.menupengelolaanbarangmasuk) {
 
         } else if (id == R.id.menupengelolaanbarangkeluar) {
@@ -179,13 +181,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         if (page == 1){
             PenerimaanBarangPage penerimaanBarangPage = new PenerimaanBarangPage();
-            fragmentTransaction.replace(R.id.frameLayout, penerimaanBarangPage);
+            fragmentTransaction.replace(R.id.frameLayout, penerimaanBarangPage).addToBackStack(null);
         } else if (page == 2) {
             PembayaranPage pembayaranPage = new PembayaranPage();
-            fragmentTransaction.replace(R.id.frameLayout, pembayaranPage);
-        } else {
+            fragmentTransaction.replace(R.id.frameLayout, pembayaranPage).addToBackStack(null);
+        } else if (page == 3){
+            ReturnProduksiPage returnProduksiPage = new ReturnProduksiPage();
+            fragmentTransaction.replace(R.id.frameLayout, returnProduksiPage).addToBackStack(null);
+        }
+        else {
             DashboardPage dashboardPage = new DashboardPage();
-            fragmentTransaction.replace(R.id.frameLayout, dashboardPage);
+            fragmentTransaction.replace(R.id.frameLayout, dashboardPage).addToBackStack(null);
         }
         fragmentTransaction.commit();
     }

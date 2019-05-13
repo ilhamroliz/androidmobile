@@ -6,19 +6,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
-import android.widget.Spinner;
-import android.widget.Toast;
 
 import com.example.mutiaramobile.R;
 import com.example.mutiaramobile.api.ApiService;
-import com.example.mutiaramobile.menupage.penerimaanbarang.TerimaBarangPage;
 import com.example.mutiaramobile.model.ItemModel;
 import com.example.mutiaramobile.model.PembayaranNota.NotaOrderProduksiModel;
 import com.example.mutiaramobile.serviceprovider.MutiaraServiceProvider;
@@ -36,7 +31,7 @@ import retrofit2.Response;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class PembayaranPage extends Fragment implements AdapterView.OnItemSelectedListener {
+public class PembayaranPage extends Fragment {
 
     ListView listView;
     ProgressDialog progressDialog;
@@ -113,15 +108,5 @@ public class PembayaranPage extends Fragment implements AdapterView.OnItemSelect
             }
         });
         return fragmentView;
-    }
-
-    @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> parent) {
-
     }
 }

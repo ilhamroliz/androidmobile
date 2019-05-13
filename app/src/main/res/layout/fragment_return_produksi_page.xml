@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".menupage.returnproduksipage.ReturnProduksiPage">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <GridLayout
+            android:id="@+id/grid_return_produksi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="3"
+            android:rowCount="5">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_gravity="fill"
+                android:gravity="center_vertical"
+                android:text="Supplier : "
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/return_produksi_select_supplier"
+                style="@style/spinner_style"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:layout_column="1"
+                android:layout_columnSpan="2"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="fill"></Spinner>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_columnSpan="1"
+                android:layout_gravity="fill"
+                android:layout_marginTop="20dp"
+                android:gravity="center_vertical"
+                android:text="Tanggal : "
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/return_produksi_start_date"
+                android:layout_row="1"
+                android:layout_column="1"
+                android:layout_columnSpan="1"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:layout_marginTop="20dp"
+                android:hint="Mulai"
+                android:keyboardNavigationCluster="false"
+                android:textAlignment="center" />
+
+            <EditText
+                android:id="@+id/return_produksi_end_date"
+                android:layout_row="1"
+                android:layout_column="2"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:layout_marginTop="20dp"
+                android:hint="Akhir"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/return_produksi_btn_cari"
+                android:layout_row="2"
+                android:layout_column="0"
+                android:layout_columnSpan="3"
+                android:layout_columnWeight="3"
+                android:layout_gravity="fill_horizontal"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/btn_primary"
+                android:text="Cari"
+                android:textColor="@color/primary" />
+        </GridLayout>
+
+        <ListView
+            android:id="@+id/return_produksi_list_nota_produksi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/grid_return_produksi"
+            android:layout_marginTop="30dp">
+
+        </ListView>
+
+    </RelativeLayout>
+
+</FrameLayout>

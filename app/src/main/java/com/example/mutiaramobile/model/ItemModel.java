@@ -4,6 +4,9 @@ import com.example.mutiaramobile.model.PembayaranNota.NotaOrderProduksiModel;
 import com.example.mutiaramobile.model.PembayaranNota.TerminNotaProduksiModel;
 import com.example.mutiaramobile.model.PenerimaanBarang.PenerimaanBarangModel;
 import com.example.mutiaramobile.model.PenerimaanBarang.TerimaBarangNotaModel;
+import com.example.mutiaramobile.model.ReturnProduksi.ListBarangNotaProduksiModel;
+import com.example.mutiaramobile.model.ReturnProduksi.ListNotaProduksiModel;
+import com.example.mutiaramobile.model.ReturnProduksi.SupplierProduksiModel;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -65,4 +68,43 @@ public class ItemModel {
         this.listTerminNota = listTerminNota;
     }
 
+
+    //================================================================================
+    //========================= Return Order Produksi ================================
+    //================================================================================
+    @SerializedName("SupplierProduksi")
+    @Expose
+    private List<SupplierProduksiModel> supplierProduksi = null;
+
+    public List<SupplierProduksiModel> getSupplierProduksi() {
+        return supplierProduksi;
+    }
+
+    public void setSupplierProduksi(List<SupplierProduksiModel> supplierProduksi) {
+        this.supplierProduksi = supplierProduksi;
+    }
+
+    @SerializedName("NotaProduksi")
+    @Expose
+    private List<ListNotaProduksiModel> notaProduksi = null;
+
+    public List<ListNotaProduksiModel> getNotaProduksi() {
+        return notaProduksi;
+    }
+
+    public void setNotaProduksi(List<ListNotaProduksiModel> notaProduksi) {
+        this.notaProduksi = notaProduksi;
+    }
+
+    @SerializedName("ListBarangNotaProduksi")
+    @Expose
+    private List<ListBarangNotaProduksiModel> listBarangNotaProduksi = null;
+
+    public List<ListBarangNotaProduksiModel> getListBarangNotaProduksi() {
+        return listBarangNotaProduksi;
+    }
+
+    public void setListBarangNotaProduksi(List<ListBarangNotaProduksiModel> listBarangNotaProduksi) {
+        this.listBarangNotaProduksi = listBarangNotaProduksi;
+    }
 }

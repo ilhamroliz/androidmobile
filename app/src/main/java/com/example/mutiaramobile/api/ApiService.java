@@ -2,8 +2,11 @@ package com.example.mutiaramobile.api;
 
 import com.example.mutiaramobile.model.ItemModel;
 import com.example.mutiaramobile.model.PenerimaanBarang.TerimaQtyBarangModel;
+import com.example.mutiaramobile.model.ReturnProduksi.SupplierProduksiModel;
 import com.example.mutiaramobile.model.StatusModel;
 import com.example.mutiaramobile.model.TokenModel;
+
+import java.util.Calendar;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -59,4 +62,19 @@ public interface ApiService {
                                        @Field("nota") String nota,
                                        @Field("termin") String termin,
                                        @Field("bayar") Integer bayar);
+
+    @POST("api/return-produksi/get-data-supplier")
+    Call<ItemModel> getSupplierProduksi(@Header("Authorization") String Authorization);
+
+    @POST("api/return-produksi/get-nota-produksi")
+    @FormUrlEncoded
+    Call<ItemModel> getListNotaProduksi(@Header("Authorization") String Authorization,
+                                        @Field("supplier") Integer supplier,
+                                        @Field("tglawal") String tglawal,
+                                        @Field("tglakhir") String tglakhir);
+
+    @POST("api/return-produksi/get-item-nota")
+    @FormUrlEncoded
+    Call<ItemModel> getListBarangNotaProduksi(@Header("Authorization") String Authorization,
+                                              @Field("nota") String nota);
 }
